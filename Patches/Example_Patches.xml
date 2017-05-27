@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchLib.PatchOperationSetContext">
+		<xpath>*/ThingDef[defName = "MultiAnalyzer"]/costList</xpath>
+		<operations>
+			<li Class="PatchLib.PatchOperationDebugPrint">
+				<label>Before</label>
+				<xpath>.</xpath>
+			</li>
+			<li Class="PatchLib.NodePatchOperationRemove">
+				<xpath>Plasteel</xpath>
+			</li>
+			<li Class="PatchLib.NodePatchOperationRemove">
+				<xpath>Gold</xpath>
+			</li>
+			<li Class="PatchLib.NodePatchOperationAdd">
+				<xpath>.</xpath>
+				<value>
+					<Silver>1000</Silver>
+				</value>
+			</li>
+			<li Class="PatchLib.PatchOperationDebugPrint">
+				<label>After</label>
+				<xpath>.</xpath>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
